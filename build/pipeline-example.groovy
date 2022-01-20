@@ -1,8 +1,8 @@
-String message = 'Hello from Groovy'
+String message = 'Inside build groovy file'
 println message
 
-def exampleMethod() {
-    println("exampleMethod")
+def exampleMethod(val) {
+    println(val)
 }
 
 return this
