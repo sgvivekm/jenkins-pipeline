@@ -17,8 +17,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                def prop= load "build/pipeline-example.groovy"
-                prop.exampleMethod("Build Successful")
+                script {
+                    def prop= load "build/pipeline-example.groovy"
+                    prop.exampleMethod("Build Successful")
+                }
             }
         }
         stage('Test') {
