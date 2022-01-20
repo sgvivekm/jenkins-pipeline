@@ -2,7 +2,9 @@ String message = 'Inside build groovy file'
 println message
 
 def exampleMethod(val) {
-    println(val)
+    sh """
+        echo "from build function : ${val}"
+        """
 }
 
 return this
