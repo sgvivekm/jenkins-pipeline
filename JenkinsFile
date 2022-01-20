@@ -17,6 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                load "build/pipeline-example.groovy"
             }
         }
         stage('Test') {
