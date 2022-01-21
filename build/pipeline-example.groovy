@@ -11,13 +11,14 @@ def exampleMethod(props) {
     }    
     props.build.tool.each {
         println it 
+        println(!props.build."${it}")
+        println(props.build."${it}")
+        println(!props.build."${it}".disabled)
+        println(props.build."${it}".disabled)
         //if(!props.build."${it}") props.build."${it}" = [:]
         if(!props.build."${it}".disabled) {
             println(it + " inside foreach")
-            println(!props.build."${it}")
-            println(props.build."${it}")
-            println(!props.build."${it}".disabled)
-            println(props.build."${it}".disabled)
+           
         }
     }
 }
