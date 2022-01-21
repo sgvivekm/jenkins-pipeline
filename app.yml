@@ -1,0 +1,8 @@
+name: "my-app"
+
+scm: 
+  tool: git
+
+build:
+  tool: maven
+  

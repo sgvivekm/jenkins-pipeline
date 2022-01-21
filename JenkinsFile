@@ -12,14 +12,18 @@ pipeline {
         stage('Initialize') {
             steps {
                 echo 'Initializing..'
+                script {
+                    def init = load "util/init.groovy"
+                    props = init.now()
+                }
             }
         }
         stage('Build') {
             steps {
                 echo 'Building..'
                 script {
-                    def prop= load "build/pipeline-example.groovy"
-                    prop.exampleMethod("Build Successful")
+                    def build= load "build/pipeline-example.groovy"
+                    build.exampleMethod(props)
                 }
             }
         }
